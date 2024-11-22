@@ -1,0 +1,73 @@
+/* Загальний стиль для всіх кнопок */
+button {
+  background: linear-gradient(45deg, #FF6F61, #FF856E); /* Градієнт */
+  color: #fff; /* Білий текст */
+  border: none; /* Без рамки */
+  border-radius: 8px; /* Згладжені кути */
+  padding: 10px 20px; /* Відступи */
+  font-size: 16px; /* Розмір тексту */
+  font-family: 'Arial', sans-serif; /* Шрифт */
+  cursor: pointer; /* Курсор-рука */
+  transition: all 0.3s ease; /* Плавний перехід */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь */
+  margin: 5px; /* Відступ між кнопками */
+}
+
+/* Ефект наведення */
+button:hover {
+  background: linear-gradient(45deg, #FF856E, #FF6F61); /* Зміна напрямку градієнту */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Посилення тіні */
+  transform: scale(1.05); /* Легке збільшення */
+}
+
+/* Ефект активного стану */
+button:active {
+  background: linear-gradient(45deg, #FF5345, #FF856E); /* Темніший градієнт */
+  transform: translateY(2px); /* Зсув вниз */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Зменшення тіні */
+}
+
+/* Стиль для активної кнопки (вибір декору) */
+button.active {
+  background: linear-gradient(45deg, #FFC107, #FFAA00); /* Яскравий градієнт */
+  border: 2px solid #FF6F61; /* Контур */
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.5); /* Світла тінь */
+}
+
+/* Вузькі кнопки (наприклад, для декору) */
+.decor-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: linear-gradient(45deg, #6C63FF, #3B2E99); /* Градієнт для декору */
+}
+
+/* Кнопка видалення */
+#removeDecor,
+#removeLayer {
+  background: linear-gradient(45deg, #E53935, #B71C1C); /* Червоний градієнт */
+}
+
+#removeDecor:hover,
+#removeLayer:hover {
+  background: linear-gradient(45deg, #EF5350, #C62828); /* Світліший червоний */
+}
+
+#removeDecor:active,
+#removeLayer:active {
+  background: linear-gradient(45deg, #D32F2F, #B71C1C); /* Темніший червоний */
+}
+
+/* Оформлення фону */
+body {
+  background: radial-gradient(circle, #F7F7F7, #E0E0E0); /* Світлий фон */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Контейнер для тортів */
+#cakeCanvas {
+  border: 5px solid #FF6F61; /* Рамка навколо canvas */
+  border-radius: 15px; /* Згладжені кути */
+  margin: 20px auto; /* Центрування */
+  display: block;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Тінь навколо canvas */
+}

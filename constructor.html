@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конструктор торта</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Frost & Flour</h1>
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="constructor.html">Конструктор</a></li>
+          <li><a href="about.html">Про нас</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="constructor">
+    <div class="canvas-container">
+      <!-- 3D Модель -->
+      <canvas id="cakeCanvas"></canvas>
+    </div>
+    <aside class="controls">
+      <h2>Налаштування торта</h2>
+
+      <!-- Вибір кольору -->
+      <div class="control-section">
+        <h3>Колір</h3>
+        <input type="color" id="colorPicker" value="#FF6F61">
+      </div> 
+      </div>
+
+      <div class="control-section">
+        <h3>Декор</h3>
+        <button class="decor-btn" data-decor="candle">Свічка</button>
+        <button class="decor-btn" data-decor="berry">Ягода</button>
+        <button class="decor-btn" data-decor="chocolate">Шматочок шоколаду</button>
+      </div>
+       
+      
+      <button id="addLayer">Додати шар</button>
+      <label for="layerSelect">Виберіть шар:</label>
+      <select id="layerSelect"></select>
+    
+      <button id="removeLayer">Видалити шар</button>
+      <button id="removeDecor">Видалити елемент</button>
+
+      
+
+      <!-- Вибір форми -->
+      <div class="control-section">
+        <h3>Форма</h3>
+        <select id="shapeSelect">
+          <option value="round">Круглий</option>
+          <option value="square">Квадратний</option>
+          <option value="heart">Серце</option>
+        </select>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Frost & Flour. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
+        }
+    }
+    </script>
+    
+  <script type="module" src="js/script.js"></script>
+
+</body>
+</html>

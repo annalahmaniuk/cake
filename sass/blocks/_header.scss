@@ -1,0 +1,51 @@
+.header {
+  background-color: $primary-color;
+  padding: 20px 0;
+
+
+  .container {
+    display: flex;
+    justify-content: space-between; // Назва і меню по боках
+    align-items: center;
+    padding: 0 20px; // Додаємо боковий відступ для контейнера
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    font-family: $font-family;
+    margin: 0; // Забираємо зайві відступи
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end; // Вирівнюємо меню праворуч
+    align-items: center;
+  }
+  .navigation ul {
+    display: flex;
+    gap: 20px; // Відступ між пунктами
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navigation ul li a {
+    text-decoration: none; // Видаляє підкреслення
+    color: white; // Змінюємо колір посилань на білий
+    font-size: 16px;
+    font-weight: 500; // Додаємо вагу шрифту для гарного вигляду
+    padding: 5px 10px; // Відступи для створення "кнопкового" вигляду
+    border-radius: $border-radius; // Додаємо закруглені краї
+    @include transition(color, 0.3s); // Плавний перехід кольору
+  
+    &:hover {
+      color: $accent-color; // Змінюємо колір при наведенні
+      background-color: rgba(255, 255, 255, 0.1); // Додаємо легкий фон
+    }
+  }
+  
+  
+}

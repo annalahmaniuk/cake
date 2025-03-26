@@ -1,0 +1,64 @@
+.main {
+  flex: 1; // Основний контент займає весь вільний простір
+	padding-block: 50px;
+	background-color: rgb(246, 243, 233);
+	
+	&__header {
+		width: 100%;
+		height: 400px;
+
+		&--container {
+			background-image: url(../img/figure-6-animate.svg);
+			background-repeat: no-repeat;
+			height: 100%;
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&-img {
+			// width: 400px;
+			// height: auto;
+			object-fit: cover;
+			justify-self: center;
+			height: 120%;
+		}
+
+		&-block {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 50px; 
+		}
+
+		&-title {
+			text-align: center;
+
+			color: rgb(95, 92, 92);
+			font-size: 44px;
+			font-weight: 700;
+		}
+
+		&-button {
+			display: inline-block;
+			font-weight: 700;
+			color: rgb(95, 92, 92);
+			text-decoration: none;
+			user-select: none;
+			padding: .5em 2em;
+			outline: none;
+			border: 2px solid;
+			border-color: rgb(95, 92, 92);
+			border-radius: 1px;
+			transition: 0.2s;
+
+			&:hover {
+				background-color: rgb(95, 92, 92);
+				color: rgb(255, 255, 255);
+			}
+		}
+	}
+}

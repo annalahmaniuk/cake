@@ -18,15 +18,19 @@ body {
   min-height: 100vh;
 }
 
-.main {
-  flex: 1;
+.container {
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .header {
   background-color: #232121;
   padding: 20px 0;
 }
-.header .container {
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -260,6 +264,176 @@ body {
   margin: 20px auto; /* Центрування */
   display: block;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Тінь навколо canvas */
+}
+
+.main {
+  flex: 1;
+  padding-block: 50px;
+  background-color: rgb(246, 243, 233);
+}
+.main__header {
+  width: 100%;
+  height: 400px;
+}
+.main__header--container {
+  background-image: url(../img/figure-6-animate.svg);
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main__header-img {
+  object-fit: cover;
+  justify-self: center;
+  height: 120%;
+}
+.main__header-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.main__header-title {
+  text-align: center;
+  color: rgb(95, 92, 92);
+  font-size: 44px;
+  font-weight: 700;
+}
+.main__header-button {
+  display: inline-block;
+  font-weight: 700;
+  color: rgb(95, 92, 92);
+  text-decoration: none;
+  user-select: none;
+  padding: 0.5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-color: rgb(95, 92, 92);
+  border-radius: 1px;
+  transition: 0.2s;
+}
+.main__header-button:hover {
+  background-color: rgb(95, 92, 92);
+  color: rgb(255, 255, 255);
+}
+
+.testimonials {
+  margin-top: 80px;
+}
+
+.testimonials__heading {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonials__title {
+  max-width: 452px;
+}
+
+.testimonials__subtitle {
+  max-width: 400px;
+}
+
+.testimonials__row {
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
+
+/* Основні стилі для галереї */
+#photosContainer {
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
+
+.photo-card {
+  border-radius: 5px;
+  overflow: hidden;
+  flex-basis: calc(25% - 22.5px);
+  transition: box-shadow 0.2s ease-in;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.photo-card:hover {
+  box-shadow: 0px 10px 52px 0px rgba(0, 0, 0, 0.08);
+}
+.photo-card:hover .card-testimonial__btn-play {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.photo-card img {
+  max-width: 100%; /* Зображення займає всю ширину картки */
+  border-bottom: 1px solid #ddd; /* Рамка під зображенням */
+  object-fit: cover;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  height: 220px;
+}
+
+.photo-card:hover img {
+  transform: scale(1.15);
+}
+
+.photo-card-wrapper {
+  position: relative;
+  display: block;
+}
+
+.photo-card-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: calc(100% - 220px);
+}
+
+.photo-card-wrapper {
+  overflow: hidden;
+}
+
+.photo-card-price {
+  color: #5a2525;
+  text-align: left;
+  justify-self: end;
+  transition: color 0.2s ease-in;
+  flex: 0.1;
+  margin-top: 5px;
+  font-size: 18px;
+}
+.photo-card:hover .photo-card-price {
+  color: #f78434;
+}
+
+.photo-card-text {
+  justify-self: end;
+  text-align: left;
+  color: #5a2525;
+  flex: 1;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card-testimonial__title {
+  text-align: left;
+  justify-self: end;
+  flex: 0.2;
+  font-size: 14px;
+  font-weight: 700;
+  color: #818181;
 }
 
 /*# sourceMappingURL=main.css.map */

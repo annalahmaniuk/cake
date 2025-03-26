@@ -12,5 +12,8 @@
   "description": "",
   "dependencies": {
     "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
   }
 }

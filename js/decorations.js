@@ -31,8 +31,11 @@ export function createDecor(type, position, scene) {
 
 
 function createCandle(position, scene) {
+  const colorPicker = document.getElementById('candleColor'); 
+  const selectedColor = new THREE.Color(colorPicker.value); 
+
   const candleBodyGeometry = new THREE.CylinderGeometry(0.05, 0.05, 0.8, 16); 
-  const candleBodyMaterial = new THREE.MeshStandardMaterial({ color: 0xFFFFDD });
+  const candleBodyMaterial = new THREE.MeshStandardMaterial({ color: selectedColor });
   const candleBody = new THREE.Mesh(candleBodyGeometry, candleBodyMaterial);
   candleBody.position.copy(position);
   candleBody.position.y += 0.4;
@@ -57,6 +60,7 @@ function createCandle(position, scene) {
   }
   animateFlame();
 }
+
 
 function createBerry(position, scene) {
   const berryGeometry = new THREE.SphereGeometry(Math.random() * 0.05 + 0.05, 16, 16);

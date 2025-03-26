@@ -31,40 +31,36 @@
 
       <!-- Вибір кольору -->
       <div class="control-section">
-        <h3>Колір</h3>
+        <h3>Колір коржів</h3>
         <input type="color" id="colorPicker" value="#FF6F61">
       </div> 
-      </div>
 
       <div class="control-section">
+        <h3>Колір свічки</h3>
+        <input type="color" id="candleColor" value="#FFD700"> 
         <h3>Декор</h3>
         <button class="decor-btn" data-decor="candle">Свічка</button>
         <button class="decor-btn" data-decor="berry">Ягода</button>
         <button class="decor-btn" data-decor="chocolate">Шматочок шоколаду</button>
-        <button class="decor-btn" data-decor="sugarStar">Цукрова зірочка</button>
+        <button class="decor-btn" data-decor="sugarStar"></button>
         <button class="decor-btn" data-decor="glaze">Глазур</button>
         <button class="decor-btn" data-decor="confetti">Конфетті</button>
-        <button class="decor-btn" data-decor="chocolateDrop">Шоколадна капля</button>
+        <button class="decor-btn" data-decor="chocolateDrop">Шоколадні каплі</button>
         <button class="decor-btn" data-decor="leaf">Листя</button>
-        <button class="decor-btn" data-decor="macaron">Макарони</button>
-    </div>
+        <button class="decor-btn" data-decor="macaron">Кольорові каплі</button>
+      </div>
     
-    
-       
-      
       <button id="addLayer">Додати шар</button>
       <label for="layerSelect">Виберіть шар:</label>
       <select id="layerSelect"></select>
-    
-      <button id="removeLayer">Видалити шар</button>
-      <button id="removeDecor">Видалити елемент</button>
 
-      
+      <button id="removeLayer">Видалити шар</button>
+      <button id="removeDecor">Видалити декор</button>
 
       <!-- Вибір форми -->
       <div class="control-section">
         <h3>Форма</h3>
-        <select id="shapeSelect">
+        <select id="shape-selector">
           <option value="round">Круглий</option>
           <option value="square">Квадратний</option>
           <option value="heart">Серце</option>
@@ -86,12 +82,11 @@
             "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
         }
     }
-    </script>
+  </script>
     
-    <script type="module" src="js/layers.js"></script>
-    <script type="module" src="js/decorations.js"></script>
-    <script type="module" src="js/main.js"></script>
-    
+  <script type="module" src="js/layers.js"></script>
+  <script type="module" src="js/decorations.js"></script>
+  <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

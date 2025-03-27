@@ -1,0 +1,27 @@
+.testimonials {
+	// padding-top: 40px;
+	// padding-bottom: 30px;
+	margin-top: 80px;
+}
+
+.testimonials__heading {
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.testimonials__title {
+	max-width: 452px;
+}
+.testimonials__subtitle {
+	max-width: 400px;
+}
+.testimonials__row {
+	flex-wrap: wrap;
+
+	position: relative;
+	display: flex;
+	justify-content: start;
+
+	gap: 30px;
+}

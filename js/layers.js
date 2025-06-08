@@ -1,24 +1,41 @@
+
 import * as THREE from 'three';
 
-// Функція створення шару
-export function createLayer(radius, height, color, yPosition, scene, cakeLayers) {
+export function createLayer(size, height, color, yPosition, scene, cakeLayers, shape) {
   const material = new THREE.MeshStandardMaterial({ color });
-  const geometry = new THREE.CylinderGeometry(radius, radius, height, 32);
+  let geometry;
+
+  if (shape === "round") {
+      geometry = new THREE.CylinderGeometry(size, size, height, 32);
+  } else if (shape === "square") {
+      geometry = new THREE.BoxGeometry(size * 2, height, size * 2);
+  } else {
+      geometry = new THREE.CylinderGeometry(size, size, height, 32);
+  }
+
   const layer = new THREE.Mesh(geometry, material);
   layer.position.y = yPosition;
-  scene.add(layer);
-  cakeLayers.push(layer);
 
-  // Оновлення списку шарів для вибору
-  updateLayerSelect(cakeLayers);
+  layer.userData.radius = size;   // радіус саме того шару
+layer.userData.height = height; // висота шару
+layer.userData.shape = shape;
+
+
+  scene.add(layer);
+  if (cakeLayers) {
+    cakeLayers.push(layer);
+  }
+
+  updateLayerSelect && updateLayerSelect(cakeLayers);
 }
+
 
 // Функція оновлення списку шарів у select
 export function updateLayerSelect(cakeLayers) {
   const layerSelect = document.getElementById('layerSelect');
   layerSelect.innerHTML = ''; // Очищаємо список
 
-  cakeLayers.forEach((layer, index) => {
+  cakeLayers.forEach((_layer, index) => {
     const option = document.createElement('option');
     option.value = index;
     option.textContent = `Шар ${index + 1}`;

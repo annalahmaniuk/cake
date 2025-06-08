@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-scss": "sass --watch sass/main.scss css/main.css"
+    "build-scss": "sass --watch sass/main.scss css/main.css",
+    "start": "live-server ./"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,9 @@
   "description": "",
   "dependencies": {
     "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.86.0"
   }
 }

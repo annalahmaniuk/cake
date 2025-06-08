@@ -194,7 +194,7 @@ body {
 
 /* Загальний стиль для всіх кнопок */
 button {
-  background: linear-gradient(45deg, #FF6F61, #FF856E); /* Градієнт */
+  background: linear-gradient(45deg, #e6b1ad, #d3a096); /* Градієнт */
   color: #fff; /* Білий текст */
   border: none; /* Без рамки */
   border-radius: 8px; /* Згладжені кути */
@@ -209,7 +209,7 @@ button {
 
 /* Ефект наведення */
 button:hover {
-  background: linear-gradient(45deg, #FF856E, #FF6F61); /* Зміна напрямку градієнту */
+  background: linear-gradient(45deg, #b7817d, #b7817d); /* Зміна напрямку градієнту */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Посилення тіні */
   transform: scale(1.05); /* Легке збільшення */
 }
@@ -223,7 +223,7 @@ button:active {
 
 /* Стиль для активної кнопки (вибір декору) */
 button.active {
-  background: linear-gradient(45deg, #FFC107, #FFAA00); /* Яскравий градієнт */
+  background: linear-gradient(45deg, #d72e93, #db2ebb); /* Яскравий градієнт */
   border: 2px solid #FF6F61; /* Контур */
   box-shadow: 0 4px 8px rgba(255, 193, 7, 0.5); /* Світла тінь */
 }
@@ -232,7 +232,7 @@ button.active {
 .decor-btn {
   padding: 8px 16px;
   font-size: 14px;
-  background: linear-gradient(45deg, #6C63FF, #3B2E99); /* Градієнт для декору */
+  background: linear-gradient(45deg, #686878, #68686b); /* Градієнт для декору */
 }
 
 /* Кнопка видалення */
@@ -259,7 +259,7 @@ body {
 
 /* Контейнер для тортів */
 #cakeCanvas {
-  border: 5px solid #FF6F61; /* Рамка навколо canvas */
+  border: 5px solid #272525; /* Рамка навколо canvas */
   border-radius: 15px; /* Згладжені кути */
   margin: 20px auto; /* Центрування */
   display: block;

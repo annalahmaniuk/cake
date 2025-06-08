@@ -436,4 +436,212 @@ body {
   color: #818181;
 }
 
+.related__product-link {
+  text-decoration: none; /* Remove the default underline from the link */
+}
+
+.related__product-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.related__cart-icon {
+  text-decoration: none;
+  font-size: 18px;
+  color: #3f3f3f;
+  font-weight: 100;
+  margin-left: 10px;
+}
+
+/* Модальне вікно */
+#cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+#cart-modal.active {
+  display: flex;
+}
+
+#cart-content {
+  background: #fff;
+  padding: 25px;
+  max-width: 750px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  animation: scaleUp 0.3s ease-out;
+}
+
+/* Стилі для картки товару в корзині */
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#cart-items .item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  align-items: center;
+}
+
+#cart-items img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-center {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.details {
+  font-size: 14px;
+  color: #666;
+}
+
+.item-total {
+  font-weight: bold;
+  color: #d9534f;
+  margin-top: 5px;
+}
+
+.item-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  background: linear-gradient(45deg, #0123ff, #1060e8);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#open-cart-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  background: none;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.close-modal {
+  width: 35px;
+  aspect-ratio: 1/1;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Стиль для кнопки смітника */
+.remove-item {
+  background-color: transparent; /* Прибираємо фон тільки в кнопці смітника */
+  border: none;
+  margin-right: 20px;
+  color: #6e6e6e; /* Червоний колір для смітника */
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  background: none;
+  align-items: center; /* Центруємо кнопку вертикально */
+  justify-content: center; /* Центруємо кнопку по горизонталі */
+  padding: 0; /* Видаляємо зайві відступи */
+}
+
+/* При hover зміна кольору */
+.remove-item i {
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.remove-item:hover i {
+  background: none;
+}
+
+/* Стилі для маркера */
+.cart-marker {
+  display: none; /* Прихований за замовчуванням */
+  position: absolute;
+  font-size: 25px;
+  top: 5px;
+  left: 25px;
+  z-index: 100; /* Щоб маркер був поверх інших елементів */
+}
+
+/* Якщо корзина містить товари, ми показуємо маркер */
+.cart-marker.show {
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */

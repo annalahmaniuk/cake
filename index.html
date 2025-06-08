@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <header class="header">
@@ -22,6 +23,8 @@
       </nav>
     </div>
   </header>
+
+
 
   <main class="main">
 		<section class="main__header">
@@ -47,61 +50,92 @@
 					</div>
 				</div>
 				<div id="photosContainer">
-					<div class="photo-card">
+				  <div class="photo-card" data-id="1" data-name='Торт "Баранчик"' data-weight="0.50" data-price="599.00" data-img="./img/cake.jpg">
 						<div class="photo-card-wrapper">
-							<img src="./img/cake.jpg" alt="www">
+							<img src="./img/cake.jpg" alt="Торт Баранчик" />
 						</div>
 						<div class="photo-card-body">
 							<div class="photo-card-text">Торт "Баранчик"</div>
 							<div class="card-testimonial__title">Вага: 0.50 кг</div>
 							<div class="photo-card-price">Вартість: 599.00 грн</div>
+							<div class="related__product-actions">
+								<a href="#" class="related__cart-icon">🛒</a>
+							</div>
 						</div>
 					</div>
-
-					<div class="photo-card">
+				
+					<div class="photo-card" data-id="2" data-name='Торт "Малиновий оксамит"' data-weight="1.00" data-price="1300.00" data-img="./img/girl-cake.jpg">
 						<div class="photo-card-wrapper">
-							<img src="./img/girl-cake.jpg" alt="www">
+							<img src="./img/girl-cake.jpg" alt="www" />
 						</div>
 						<div class="photo-card-body">
 							<div class="photo-card-text">Торт "Малиновий оксамит"</div>
 							<div class="card-testimonial__title">Вага: 1.0 кг</div>
 							<div class="photo-card-price">Вартість: 1 300.00 грн</div>
+							<div class="related__product-actions">
+								<a href="#" class="related__cart-icon">🛒</a>
+							</div>
 						</div>
 					</div>
-
-					<div class="photo-card">
+				
+					<div class="photo-card" data-id="3" data-name='Торт "Рафаелло"' data-weight="0.70" data-price="1000.00" data-img="./img/white-cake.jpg">
 						<div class="photo-card-wrapper">
-							<img src="./img/white-cake.jpg" alt="www">
+							<img src="./img/white-cake.jpg" alt="www" />
 						</div>
 						<div class="photo-card-body">
 							<div class="photo-card-text">Торт "Рафаелло"</div>
 							<div class="card-testimonial__title">Вага: 0.70 кг</div>
 							<div class="photo-card-price">Вартість: 1 000.00 грн</div>
+							<div class="related__product-actions">
+								<a href="#" class="related__cart-icon">🛒</a>
+							</div>
 						</div>
 					</div>
-
-					<div class="photo-card">
+				
+					<div class="photo-card" data-id="4" data-name='Торт "Тропікано"' data-weight="0.70" data-price="1100.00" data-img="./img/green-cake.jpg">
 						<div class="photo-card-wrapper">
-							<img src="./img/green-cake.jpg" alt="www">
+							<img src="./img/green-cake.jpg" alt="www" />
 						</div>
 						<div class="photo-card-body">
 							<div class="photo-card-text">Торт "Тропікано"</div>
 							<div class="card-testimonial__title">Вага: 0.70 кг</div>
 							<div class="photo-card-price">Вартість: 1 100.00 грн</div>
+							<div class="related__product-actions">
+								<a href="#" class="related__cart-icon">🛒</a>
+							</div>
 						</div>
 					</div>
-
-					<div class="photo-card">
+				
+					<div class="photo-card" data-id="5" data-name='Торт "Синевір"' data-weight="0.70" data-price="1100.00" data-img="./img/blue-cake.jpg">
 						<div class="photo-card-wrapper">
-							<img src="./img/blue-cake.jpg" alt="www">
+							<img src="./img/blue-cake.jpg" alt="www" />
 						</div>
 						<div class="photo-card-body">
 							<div class="photo-card-text">Торт "Синевір"</div>
 							<div class="card-testimonial__title">Вага: 0.70 кг</div>
 							<div class="photo-card-price">Вартість: 1 100.00 грн</div>
+							<div class="related__product-actions">
+								<a href="#" class="related__cart-icon">🛒</a>
+							</div>
 						</div>
 					</div>
 				</div>
+
+				
+				<button id="open-cart-btn">
+					<div id="cart-marker" class="cart-marker">🎂</div>
+				🛒</button>
+				
+				<!-- Модальне вікно корзини -->
+				<div id="cart-modal">
+					<div id="cart-content">
+						<button class="close-modal" title="Закрити">&times;</button>
+						<h2>Корзина</h2>
+						<div id="cart-items"></div>
+						<div id="cart-total"></div>
+					</div>
+				</div>
+				
 			</div>
 			</div>
 		</section>
@@ -113,5 +147,157 @@
       <p>&copy; 2024 Frost & Flour Усі права захищені.</p>
     </div>
   </footer>
+
+	<script>
+		// Отримуємо елементи на сторінці
+const cartMarker = document.getElementById('cart-marker'); // Маркер для корзини
+const openCartBtn = document.getElementById('open-cart-btn');
+const cartModal = document.getElementById('cart-modal');
+const closeModalBtn = cartModal.querySelector('.close-modal');
+const cartItemsContainer = document.getElementById('cart-items');
+const cartTotalContainer = document.getElementById('cart-total');
+
+// Функція для рендерингу корзини
+function renderCart() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || {};
+  cartItemsContainer.innerHTML = '';
+  cartTotalContainer.innerHTML = '';
+
+  // Показуємо або приховуємо маркер залежно від того, чи є товари в корзині
+  if (Object.keys(cart).length > 0) {
+    cartMarker.classList.add('show');  // Показуємо маркер
+  } else {
+    cartMarker.classList.remove('show');  // Приховуємо маркер
+  }
+
+  if (Object.keys(cart).length === 0) {
+    cartItemsContainer.innerHTML = '<p>Корзина порожня</p>';
+    return;
+  }
+
+  let total = 0;
+  for (const id in cart) {
+    const item = cart[id];
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'item';
+    itemDiv.setAttribute('data-id', id);
+
+    itemDiv.innerHTML = `
+      <div class="item-left">
+        <button class="remove-item">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+        <img src="${item.img}" alt="${item.name}" />
+      </div>
+      <div class="item-center">
+        <strong>${item.name}</strong>
+        <div class="details">
+          <div>Кількість: ${item.quantity} шт</div>
+          <div>Ціна: ${item.price} грн/шт</div>
+        </div>
+        <div class="price">Всього: ${itemTotal.toFixed(2)} грн</div>
+      </div>
+      <div class="item-right">
+        <button class="decrease-qty">-</button>
+        <button class="increase-qty">+</button>
+      </div>
+    `;
+    cartItemsContainer.appendChild(itemDiv);
+  }
+
+  cartTotalContainer.innerHTML = `<hr><strong>Загальна сума: ${total.toFixed(2)} грн</strong>`;
+
+  // Обробники кнопок в корзині
+  cartItemsContainer.querySelectorAll('.decrease-qty').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const itemDiv = e.target.closest('.item');
+      const id = itemDiv.getAttribute('data-id');
+      if (cart[id].quantity > 1) {
+        cart[id].quantity -= 1;
+      } else {
+        delete cart[id];
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    });
+  });
+
+  cartItemsContainer.querySelectorAll('.increase-qty').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const itemDiv = e.target.closest('.item');
+      const id = itemDiv.getAttribute('data-id');
+      cart[id].quantity += 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    });
+  });
+
+  cartItemsContainer.querySelectorAll('.remove-item').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const itemDiv = e.target.closest('.item');
+      const id = itemDiv.getAttribute('data-id');
+      delete cart[id];
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    });
+  });
+}
+
+// Додавання товару в корзину по кнопці 🛒 в каталозі
+document.querySelectorAll('.related__cart-icon').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const card = this.closest('.photo-card');
+    const productId = card.getAttribute('data-id');
+    const product = {
+      id: productId,
+      name: card.getAttribute('data-name'),
+      weight: card.getAttribute('data-weight'),
+      price: parseFloat(card.getAttribute('data-price').replace(/\s/g, '')),
+      img: card.getAttribute('data-img') // Додаємо посилання на зображення
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    if (cart[productId]) {
+      alert(`Товар "${product.name}" вже в корзині`);
+    } else {
+      cart[productId] = {...product, quantity: 1};
+      alert(`Товар "${product.name}" додано в корзину`);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  });
+});
+
+// Відкриття модального вікна
+openCartBtn.addEventListener('click', () => {
+  renderCart();
+  cartModal.classList.add('active');
+});
+
+// Закриття модального вікна
+closeModalBtn.addEventListener('click', () => {
+  cartModal.classList.remove('active');
+});
+
+// Закриття модалки по кліку поза контентом
+cartModal.addEventListener('click', (e) => {
+  if (e.target === cartModal) {
+    cartModal.classList.remove('active');
+  }
+});
+
+// Перевірка корзини при завантаженні сторінки
+window.addEventListener('load', () => {
+  renderCart(); // Перевіряємо, чи є товари при завантаженні сторінки
+});
+
+	</script>
 </body>
 </html>

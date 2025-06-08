@@ -14,8 +14,7 @@
         <ul>
           <li><a href="index.html">Головна</a></li>
           <li><a href="constructor.html">Конструктор</a></li>
-          <li><a href="about.html">Про нас</a></li>
-          <li><a href="contact.html">Контакти</a></li>
+          <li><a href="my_cakes.html">Мої торти</a></li>
         </ul>
       </nav>
     </div>
@@ -23,50 +22,57 @@
 
   <main class="constructor">
     <div class="canvas-container">
-      <!-- 3D Модель -->
-      <canvas id="cakeCanvas"></canvas>
+      <canvas id="cakeCanvas" aria-label="3D модель торта" role="graphics-symbol"></canvas>
     </div>
+
     <aside class="controls">
       <h2>Налаштування торта</h2>
 
       <!-- Вибір кольору -->
       <div class="control-section">
         <h3>Колір коржів</h3>
-        <input type="color" id="colorPicker" value="#FF6F61">
-      </div> 
+        <input type="color" id="colorPicker" value="#FF6F61" aria-label="Вибір кольору коржів">
+      </div>
 
       <div class="control-section">
         <h3>Колір свічки</h3>
-        <input type="color" id="candleColor" value="#FFD700"> 
+        <input type="color" id="candleColor" value="#FFD700" aria-label="Вибір кольору свічки">
+      </div>
+
+      <!-- Декор -->
+      <div class="control-section">
         <h3>Декор</h3>
-        <button class="decor-btn" data-decor="candle">Свічка</button>
-        <button class="decor-btn" data-decor="berry">Ягода</button>
-        <button class="decor-btn" data-decor="chocolate">Шматочок шоколаду</button>
-        <button class="decor-btn" data-decor="sugarStar"></button>
-        <button class="decor-btn" data-decor="glaze">Глазур</button>
-        <button class="decor-btn" data-decor="confetti">Конфетті</button>
-        <button class="decor-btn" data-decor="chocolateDrop">Шоколадні каплі</button>
-        <button class="decor-btn" data-decor="leaf">Листя</button>
-        <button class="decor-btn" data-decor="macaron">Кольорові каплі</button>
+        <button class="decor-btn" data-decor="candle" aria-label="Додати свічку">Свічка</button>
+        <button class="decor-btn" data-decor="berry" aria-label="Додати ягоду">Ягода</button>
+        <button class="decor-btn" data-decor="chocolate" aria-label="Додати шматочок шоколаду">Шматочок шоколаду</button>
+        <button class="decor-btn" data-decor="sugarStar" aria-label="Додати цукрову зірочку"></button>
+        <button class="decor-btn" data-decor="glaze" aria-label="Додати глазур">Глазур</button>
+        <button class="decor-btn" data-decor="confetti" aria-label="Додати конфетті">Конфетті</button>
+        <button class="decor-btn" data-decor="chocolateDrop" aria-label="Додати шоколадні каплі">Шоколадні каплі</button>
+        <button class="decor-btn" data-decor="leaf" aria-label="Додати листя">Листя</button>
+        <button class="decor-btn" data-decor="macaron" aria-label="Додати кольорові каплі">Кольорові каплі</button>
       </div>
     
-      <button id="addLayer">Додати шар</button>
+      <p id="cakePrice">Загальна вартість торта: $0</p>
+
+      <button id="addLayer" aria-label="Додати новий шар">Додати шар</button>
       <label for="layerSelect">Виберіть шар:</label>
-      <select id="layerSelect"></select>
+      <select id="layerSelect" aria-label="Вибір шару торта"></select>
 
-      <button id="removeLayer">Видалити шар</button>
-      <button id="removeDecor">Видалити декор</button>
-
-      <!-- Вибір форми -->
+      <button id="removeLayer" aria-label="Видалити обраний шар">Видалити шар</button>
+      <button id="removeDecor" aria-label="Видалити декор">Видалити декор</button>
       <div class="control-section">
         <h3>Форма</h3>
-        <select id="shape-selector">
+        <select id="shape-selector" aria-label="Вибір форми торта">
           <option value="round">Круглий</option>
           <option value="square">Квадратний</option>
           <option value="heart">Серце</option>
         </select>
       </div>
+      <button id="saveCakeBtn" class="save-btn">Зберегти торт</button>
+
     </aside>
+    
   </main>
 
   <footer class="footer">
@@ -87,6 +93,5 @@
   <script type="module" src="js/layers.js"></script>
   <script type="module" src="js/decorations.js"></script>
   <script type="module" src="js/main.js"></script>
-
 </body>
 </html>

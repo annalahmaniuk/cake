@@ -7,6 +7,15 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	
+	@include on-phone {
+		gap: 15px;
+		flex-direction: column;
+
+		p {
+			text-align: center;
+		}
+	}
 }
 .testimonials__title {
 	max-width: 452px;

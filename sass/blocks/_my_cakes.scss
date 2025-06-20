@@ -1,0 +1,53 @@
+#cakes-list {
+  display: grid;
+  gap: 20px;
+  @include page-grid; // Використовуємо міксин для сітки, яка змінюється на основі пристрою
+}
+
+.my-cakes__container {
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+}
+
+.cake-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background: white;
+
+  // Початкові налаштування для великих екранів (4 колонки)
+  grid-column: span 4;
+
+	@include on-desktop {
+    // Для десктопів 3 колонки
+    grid-column: span 3;
+  }
+
+  @include on-phone {
+    // На телефонах кожна карточка займає всю ширину
+    grid-column: 1 / -1;
+  }
+
+  
+}
+
+// canvas {
+//   width: 100%; /* Задаємо ширину в 100% від батьківського контейнера */
+//   height: auto; /* Зберігаємо пропорції висоти відповідно до ширини */
+//   max-width: 300px; /* Встановлюємо максимальну ширину */
+//   max-height: 300px; /* Встановлюємо максимальну висоту */
+// }
+
+// /* Для мобільних пристроїв можна зробити canvas ще меншим */
+// @media (max-width: 600px) {
+//   canvas {
+//     max-width: 200px; /* Менша максимальна ширина для маленьких екранів */
+//     max-height: 200px; /* Менша висота для маленьких екранів */
+//   }
+// }

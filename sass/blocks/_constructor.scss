@@ -4,31 +4,12 @@
   align-items: stretch;
   height: calc(100vh - 120px); // Висота з урахуванням хедера і футера
 
+	@include on-tablet {
+		flex-direction: column;
+	}
 
-  .control-section {
-    margin-bottom: 20px;
 
-    h3 {
-      font-size: 18px;
-      color: $text-color;
-      margin-bottom: 10px;
-    }
-
-    .decor-btn {
-      background-color: $primary-color;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      margin-right: 10px;
-      cursor: pointer;
-      border-radius: $border-radius;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: darken($primary-color, 10%);
-      }
-    }
-  }
+  
 
 
   .canvas-container {
@@ -56,6 +37,8 @@
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		overflow-y: auto;
+		text-align: center;
 
     h2 {
       font-size: 24px;
@@ -65,9 +48,14 @@
 
     .control-section {
       margin-bottom: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+		
 
       h3 {
-        font-size: 18px;
+        font-size: 14px;
         color: $text-color;
         margin-bottom: 10px;
       }
@@ -110,12 +98,11 @@
 
       // Стилі для input[type="color"]
       input[type="color"] {
-        width: 100%; // Робимо інпут повної ширини блоку
+        width: 85px; // Робимо інпут повної ширини блоку
         height: 40px; // Встановлюємо висоту
-        border: 1px solid $primary-color; // Додаємо рамку кольору $primary-color
-        border-radius: $border-radius; // Закруглені кути
+        border: none; // Додаємо рамку кольору $primary-color
         cursor: pointer; // Додаємо курсор для взаємодії
-        padding: 5px; // Відступи всередині
+        padding: 0; // Відступи всередині
 
         &::-webkit-color-swatch {
           border: none; // Забираємо рамку кольору всередині
@@ -136,4 +123,12 @@
       }
     }
   }
+}
+
+
+.control-section__wrapper {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	flex-wrap: wrap;
 }

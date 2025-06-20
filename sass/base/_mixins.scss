@@ -8,3 +8,46 @@
 @mixin transition($property: all, $duration: 0.3s, $easing: ease) {
   transition: $property $duration $easing;
 }
+
+@mixin on-phone {
+  @media (max-width: $phone-max-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (max-width: $desktop-max-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  // За замовчуванням значення для десктопу
+  --columns: 12; /* основне значення для всіх пристроїв */
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  // Медіа-запит для планшетів
+  @include on-tablet {
+    --columns: 6;
+    column-gap: 20px;
+  }
+
+  // Медіа-запит для телефонів
+  @include on-phone {
+    --columns: 2;
+    column-gap: 10px; // Якщо хочете додати відступи на телефоні
+  }
+
+  // Медіа-запит для десктопу
+  @include on-desktop {
+    --columns: 6;
+  }
+}
